@@ -1,4 +1,4 @@
-/* Todo: du blev vid 1.10: unicafe step 5, statisticLine inte satt med"*/
+/* Todo:*/
 
 import { useState } from "react";
 
@@ -14,12 +14,16 @@ const Tilasto = (props) => {
     return (
       <>
         <h2>statistics</h2>
-        <Tilastorivi text="good" value={props.good} />
-        <Tilastorivi text="neutral" value={props.neutral} />
-        <Tilastorivi text="bad" value={props.neutral} />
-        <Tilastorivi text="all" value={props.all} />
-        <Tilastorivi text="average" value={props.average} />
-        <Tilastorivi text="percent positive" value={props.percent} />
+        <table>
+          <tbody>
+            <Tilastorivi text="good" value={props.good} />
+            <Tilastorivi text="neutral" value={props.neutral} />
+            <Tilastorivi text="bad" value={props.neutral} />
+            <Tilastorivi text="all" value={props.all} />
+            <Tilastorivi text="average" value={props.average} />
+            <Tilastorivi text="percent positive" value={props.percent} />
+          </tbody>
+        </table>
       </>
     );
   }
@@ -30,9 +34,10 @@ const Button = ({ handleClick, text }) => (
 );
 const Tilastorivi = (props) => {
   return (
-    <p>
-      {props.text}:{props.value}
-    </p>
+    <tr>
+      <td>{props.text}</td>
+      <td>{props.value}</td>
+    </tr>
   );
 };
 const App = () => {
